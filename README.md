@@ -1,5 +1,7 @@
 # FractalText Specification
 
+FractalText: dead simple, human readable, machine editable, line-wise interpretable, recursive plaintext data format.
+
 [Full specification](./spec.md)
 
 ## What is this?
