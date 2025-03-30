@@ -1,0 +1,61 @@
+---
+title: FractalText
+create-at: 2025-03-29
+updated-at: 2025-03-30
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+FractalText is a dead simple, human readable, machine editable, line-wise interpretable, recursive plaintext data format.
+
+It contains only list, dict and value.
+All values are string, since data exchange format should not require types.
+
+<CardGrid>
+  <Card title="Human Readable" icon="magnifier">
+    Looks its structure at a glance
+  </Card>
+  <Card title="Machine Editable" icon="pencil">
+    Easy and concise in-place editing
+  </Card>
+  <Card title="Dead Simple" icon="setting">
+    Minimum amount of specification
+  </Card>
+  <Card title="Line-wise Interpretable" icon="list-format">
+    Easy to implement its parser and serializer
+  </Card>
+  <Card title="Recursive" icon="seti:plan">
+    Easy to understand or interpret
+  </Card>
+  <Card title="Plaintext" icon="document">
+    Appears UTF-8 only!
+  </Card>
+</CardGrid>
+
+FractalText is a data format. It:
+- only have two parts; list and dictionary.
+- can write some comments.
+- includes only string value as a element of list.
+- aims in-place editing easily.
+
+Restrictions:
+- dictionary may contain list, but list may not contain dictionary.
+- list element must not contain a newline character.
+- dictionary key must not contain a newline character.
+
+Example:
+```txt
+:key1
+  value1-1
+  value1-2
+
+:key2
+  :key2-1
+    value2-1
+    value2-2
+  :key2-2
+    ""
+    value2-4
+
+#comment1
+```

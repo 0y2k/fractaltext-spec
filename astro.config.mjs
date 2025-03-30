@@ -6,23 +6,34 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "FractalText",
+      logo: {
+        src: "./public/favicon.svg",
+      },
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/0y2k/fractaltext-spec",
       },
       sidebar: [
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
-        },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
+          slug: "spec",
+          translations: {
+            en: "Specification",
+            ja: "仕様",
+          },
         },
       ],
+      defaultLocale: "en",
+      locales: {
+        en: {
+          label: "English",
+        },
+        ja: {
+          label: "日本語",
+        },
+      },
     }),
   ],
+  redirects: {
+    "/": "/en",
+  },
 });

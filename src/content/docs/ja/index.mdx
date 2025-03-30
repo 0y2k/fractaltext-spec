@@ -1,0 +1,61 @@
+---
+title: FractalText
+create-at: 2025-03-29
+updated-at: 2025-03-30
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+FractalTextは，人間が読め，機械が編集でき，行ごとに解釈可能で，再帰的な平文のシンプルなデータフォーマットです．
+
+リスト，辞書，値のみから成ります．
+全ての値は文字列です．データ交換フォーマットは型を要求すべきではありません．
+
+<CardGrid>
+  <Card title="人間が読める" icon="magnifier">
+    一目見て構造が理解できる．
+  </Card>
+  <Card title="機械が編集できる" icon="pencil">
+    コメントを保存しながら編集．
+  </Card>
+  <Card title="シンプル" icon="setting">
+    必要最小限の仕様
+  </Card>
+  <Card title="行ごとに解釈できる" icon="list-format">
+    実装が簡単
+  </Card>
+  <Card title="再帰的" icon="seti:plan">
+    理解と解釈が容易．
+  </Card>
+  <Card title="平文" icon="document">
+    UTF-8だけが出現．
+  </Card>
+</CardGrid>
+
+FractalTextはデータフォーマットです．
+- リストと辞書の2つのみを持ちます．
+- コメントを挿入できます．
+- リストの要素として文字列値のみが許可されます．
+- 機械的に(構造やコメントを保存しながら)編集ができます．
+
+以下の制約があります．
+- 辞書はリストを含めますが，リストは辞書を含めません．
+- リストの要素は改行を含むことができません．
+- 辞書のキーは改行を含むことができません．
+
+Example:
+```txt
+:key1
+  value1-1
+  value1-2
+
+:key2
+  :key2-1
+    value2-1
+    value2-2
+  :key2-2
+    ""
+    value2-4
+
+#comment1
+```
