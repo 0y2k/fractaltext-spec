@@ -2,7 +2,8 @@
 
 FractalText: dead simple, human readable, machine editable, line-wise interpretable, recursive plaintext data format.
 
-[Full specification](./spec.md)
+- [Full specification](./spec.en.md)
+- [Full specification by Japanese](./spec.ja.md)
 
 ## What is this?
 
