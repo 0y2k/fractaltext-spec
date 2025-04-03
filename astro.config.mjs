@@ -34,6 +34,8 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    "/": "/en",
+    "/": "/fractaltext-spec/en",
   },
+  site: "https://0y2k.github.io",
+  base: "fractaltext-spec",
 });
